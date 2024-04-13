@@ -1,0 +1,361 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.home > * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home {
+  margin-top: 100px;
+}
+
+.hero {
+  width: 100%;
+  height: 80vh;
+}
+
+.video-frame {
+  width: 100%;
+  height: 95%;
+  border-radius: 5px;
+  object-fit: contain;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 1000px 1px var(--dark);
+  z-index: 1;
+}
+
+.video-frame > video {
+  display: none;
+}
+
+.welcome-txt {
+  text-align: center;
+  width: 95%;
+  font-size: 45px;
+  line-height: 50px;
+  font-family: "Nabla", cursive;
+  user-select: none;
+}
+
+
+.projects-rev {
+  width: 98%;
+  margin: 20px auto;
+  transition: all 300ms ease;
+}
+
+.projects-rev > .title {
+  width: 70%;
+  max-width: 350px;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+  font-size: 30px;
+  border-bottom: 2px solid var(--magenta);
+  color: var(--text-main-col);
+}
+
+.grid {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.screenshot {
+  margin: 15px auto;
+  padding: 20px 5px;
+  width: 80%;
+  max-width: 370px;
+  max-height: 280px;
+  background-color: var(--footer-col);
+  text-align: center;
+  border: 1px solid var(--text-main-col);
+  border-radius: 10px;
+  position: relative;
+  transition: all 300ms ease;
+}
+
+.shop-list,
+.random-qoute {
+  display: none;
+}
+
+.screenshot > img {
+  display: block;
+  margin: 10px auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: all 300ms ease;
+  border-radius: 10px;
+}
+
+.screenshot > figcaption {
+  margin: 5px auto;
+  padding: 5px 0;
+  width: 70%;
+  height: 25px;
+  color: var(--text-main-col);
+  font-size: 13px;
+  transition: all 1s ease;
+  position: relative;
+}
+
+.screenshot > figcaption:before {
+  content: "";
+  width: 0;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.5s ease;
+}
+
+.screenshot > figcaption:after {
+  content: "";
+  width: 0;
+  height: 30px;
+  position: absolute;
+  left: -2px;
+  top: -1px;
+  transition: all 300ms ease;
+  border-bottom: 4px solid var(--footer-col);
+}
+
+.screenshot:hover > figcaption:before {
+  width: 100%;
+  border-bottom-color: var(--text-main-col);
+}
+
+.screenshot:hover > figcaption:after {
+  width: calc(100% + 3px);
+  transition-delay: 300ms;
+}
+
+.screenshot:active {
+  transform: scale(1.05);
+  box-shadow: 0 3px 7px 1px var(--text-main-col);
+}
+
+.screenshot:hover {
+  transform: scale(1.05);
+}
+
+.screenshot:hover > img {
+  filter: blur(2px);
+  transform: scale(120%);
+}
+
+.middle-link {
+  position: absolute;
+  padding: .5em;
+  bottom: 50%;
+  left: 33%;
+  width: 35%;
+  height: 30px;
+  transition: all 300ms ease;
+  color: var(--green);
+  background-color: var(--footer-col);
+  font-size: 18px;
+  line-height: 2rem;
+  text-decoration: none;
+  border: 1px solid var(--green);
+  box-shadow: 0 0 10px 1px var(--green);
+  border-radius: 5px;
+  opacity: 0;
+}
+
+.screenshot:hover > .middle-link {
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .video-frame {
+    box-shadow: unset;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .video-frame > video {
+    display: unset;
+    object-fit: cover;
+    width: 70%;
+    height: 70%;
+    border-radius: 5px;
+    position: absolute;
+    top: 30%;
+    z-index: -1;
+    filter: blur(200px);
+    opacity: 60%;
+  }
+
+  .welcome-txt {
+    margin: 0;
+    width: 40%;
+    line-height: 50px;
+    text-align: left;
+    font-size: 40px;
+  }
+
+  .first-word {
+    margin-right: 100%;
+    font-size: 80px;
+  }
+
+  .txt-btn-group {
+    width: 40%;
+    height: 100%;
+    margin-left: 0;
+    align-items: flex-end;
+    justify-content: space-around;
+  }
+
+  .contact-div,
+  .projects-div {
+    width: 100%;
+    height: 30%;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    transition: all 300ms ease-in;
+    transition-delay: 200ms;
+  }
+
+  .contact-div:hover,
+  .projects-div:hover {
+    border: 1px solid var(--green);
+    transform: translateY(-5%);
+    box-shadow: 0 15px 10px 1px var(--dark);
+  }
+
+  .contact-text,
+  .projects-text {
+    margin: 0;
+    padding: 5px;
+    text-align: left;
+    font-size: 22px;
+    line-height: 30px;
+    transition: all 300ms ease;
+  }
+
+  .pixelated-btn {
+    height: 40px;
+    border: 1px solid var(--text-main-col);
+    position: relative;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .projects-rev > .title {
+    font-size: 44px;
+  }
+
+  .screenshot {
+    height: 300px;
+    min-width: 330px;
+  }
+
+  .bmiCalc {
+    grid-area: 2/1/2 / span 2;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .welcome-txt {
+    font-size: 70px;
+    line-height: 80px;
+  }
+
+  .first-word {
+    font-size: 90px;
+  }
+
+  .projects-text,
+  .contact-text {
+    width: 60%;
+  }
+
+  .pixelated-btn {
+    border: none;
+    font-size: 22px;
+  }
+
+  .pixelated-btn::before,
+  .pixelated-btn::after {
+    width: 0;
+    height: 0;
+    content: "";
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+    transition: all 400ms ease;
+  }
+
+  .pixelated-btn:before {
+    border-top: 2px solid var(--text-main-col);
+    border-left: 2px solid var(--text-main-col);
+    top: -2px;
+    left: -2px;
+  }
+  .pixelated-btn::after {
+    border-bottom: 2px solid var(--text-main-col);
+    border-right: 2px solid var(--text-main-col);
+    bottom: -2px;
+    right: -2px;
+  }
+
+  .pixelated-btn:hover::before,
+  .pixelated-btn:hover::after {
+    width: calc(100% + 2px);
+    height: 100%;
+    opacity: 100%;
+  }
+
+  .screenshot {
+    padding: 0 15px;
+    min-width: 320px;
+  }
+
+  .screenshot img {
+    width: 350px;
+    height: 210px;
+  }
+
+  .screenshot:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 15px 1px var(--text-main-col);
+  }
+
+  .grid {
+    margin: 50px;
+    grid-template-areas: "calc bmiCalc tictactoe";
+    gap: 30px;
+  }
+
+  .calc {
+    grid-area: calc;
+  }
+
+  .bmiCalc {
+    grid-area: bmiCalc;
+  }
+
+  .tictactoe {
+    grid-area: tictactoe;
+  }
+}
