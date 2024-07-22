@@ -1,29 +1,17 @@
-import Image from "next/image";
 import "../styles/Home.css";
-import Link from "next/link";
 import ProjectCard from "../components/ProjectCard";
 import ProjectsArr from "@/lib/projects";
-
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="home">
       <section className="hero">
-        <div className="video-frame">
-          {/* <video
-            className="video"
-            src={video}
-            autoPlay
-            loop
-            muted
-            preload="auto"
-            poster="https://th.bing.com/th/id/OIP.gYyvBOuQwXSWuefMRBZp9gAAAA?pid=ImgDet&rs=1"
-          /> */}
-
-          <h1 className="welcome-txt">
-            <span className="first-word">Welcome</span> to my portfolio!
-          </h1>
-          
+        <div className="hero-text">
+          <h1>Hi! I am Jakob a front-end dev</h1>
+          <h2>
+            this is no longer current version, you can see new one <Link href={""}>here</Link>
+          </h2>
         </div>
       </section>
       <section className="projects-rev">
@@ -39,7 +27,6 @@ export default function Home() {
             />
           ))}
         </div>
-        
       </section>
     </main>
   );

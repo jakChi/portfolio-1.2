@@ -18,37 +18,25 @@
 }
 
 .hero {
-  width: 100%;
+  width: 90%;
   height: 80vh;
-}
-
-.video-frame {
-  width: 100%;
-  height: 95%;
-  border-radius: 5px;
-  object-fit: contain;
-  position: relative;
+  margin: 60px auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 0 1000px 1px var(--dark);
-  z-index: 1;
+  border-radius: 20px;
+  color: #00d4ff;
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 
-.video-frame > video {
-  display: none;
+.hero-text h2 {
+  
 }
-
-.welcome-txt {
-  text-align: center;
-  width: 95%;
-  font-size: 45px;
-  line-height: 50px;
-  font-family: "Nabla", cursive;
-  user-select: none;
-}
-
 
 .projects-rev {
   width: 98%;
@@ -160,7 +148,7 @@
 
 .middle-link {
   position: absolute;
-  padding: .5em;
+  padding: 0.5em;
   bottom: 50%;
   left: 33%;
   width: 35%;
@@ -182,36 +170,8 @@
 }
 
 @media screen and (min-width: 768px) {
-  .video-frame {
-    box-shadow: unset;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  .video-frame > video {
-    display: unset;
-    object-fit: cover;
-    width: 70%;
-    height: 70%;
-    border-radius: 5px;
-    position: absolute;
-    top: 30%;
-    z-index: -1;
-    filter: blur(200px);
-    opacity: 60%;
-  }
-
-  .welcome-txt {
-    margin: 0;
-    width: 40%;
-    line-height: 50px;
-    text-align: left;
-    font-size: 40px;
-  }
-
-  .first-word {
-    margin-right: 100%;
-    font-size: 80px;
+  .hero-text > h1 {
+    font-size: 60px;
   }
 
   .txt-btn-group {
@@ -276,14 +236,33 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .welcome-txt {
-    font-size: 70px;
-    line-height: 80px;
+  .hero-text {
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
   }
 
-  .first-word {
-    font-size: 90px;
+  .hero-text > h1 {
+    font-size: 60px;
   }
+
+  .hero-text > h2 {
+    animation-name: slideIn; 
+    animation-duration: 1.5s;
+    font-size: 20px;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      
+    }
+    to {
+      transform: translateX(0);
+      
+    }
+  }
+
 
   .projects-text,
   .contact-text {

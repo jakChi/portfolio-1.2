@@ -1,10 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Navbar.css";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../public/logo2.png";
+
+import { config } from '@fortawesome/fontawesome-svg-core' // 👈
+import '@fortawesome/fontawesome-svg-core/styles.css' // 👈
+config.autoAddCss = false // 👈
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSquareCaretDown,
@@ -21,9 +25,33 @@ const HOME = <FontAwesomeIcon icon={faHouse} />;
 const PROJECTS = <FontAwesomeIcon icon={faBarsProgress} />;
 const ABOUT = <FontAwesomeIcon icon={faAt} />;
 
-const Navbar = ({ mobile }) => {
+const Navbar = () => {
   const [clicked, setClicked] = useState(false);
+  const [mobile, setMobile] = useState(window.innerWidth > 425 ? false : true);
+  
+
   const path = usePathname();
+  
+  useEffect(() => {
+
+    const handleResize = () => {
+      const screenSize = window.innerWidth;
+
+      if (screenSize < 426) {
+        setMobile(true);
+      } else {
+        setMobile(false)
+      }
+    };
+
+    // Add event listener when component mounts
+    window.addEventListener("resize", handleResize);
+
+    // Remove event listener when component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []); 
 
   const handleClick = () => {
     mobile ? setClicked(!clicked) : setClicked(false);

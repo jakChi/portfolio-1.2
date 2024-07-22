@@ -3,9 +3,10 @@
   padding: 0;
 }
 
-.contact {
-  margin-top: 100px;
-  width: 100%;
+.grid {
+  margin: auto;
+  margin-top: 150px;
+  width: 80%;
   display: grid;
   grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
   row-gap: 3rem;
@@ -49,7 +50,7 @@ hr {
   text-align: justify;
 }
 
-.hero {
+.about-hero {
   grid-column: 1 / -1;
   position: relative;
 }
