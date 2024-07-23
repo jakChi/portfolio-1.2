@@ -6,9 +6,10 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../../public/logo2.png";
 
-import { config } from '@fortawesome/fontawesome-svg-core' // 👈
-import '@fortawesome/fontawesome-svg-core/styles.css' // 👈
-config.autoAddCss = false // 👈
+import { config } from "@fortawesome/fontawesome-svg-core"; // 👈
+import "@fortawesome/fontawesome-svg-core/styles.css"; // 👈
+config.autoAddCss = false; // 👈
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSquareCaretDown,
@@ -27,34 +28,11 @@ const ABOUT = <FontAwesomeIcon icon={faAt} />;
 
 const Navbar = () => {
   const [clicked, setClicked] = useState(false);
-  const [mobile, setMobile] = useState(window.innerWidth > 425 ? false : true);
-  
 
   const path = usePathname();
-  
-  useEffect(() => {
-
-    const handleResize = () => {
-      const screenSize = window.innerWidth;
-
-      if (screenSize < 426) {
-        setMobile(true);
-      } else {
-        setMobile(false)
-      }
-    };
-
-    // Add event listener when component mounts
-    window.addEventListener("resize", handleResize);
-
-    // Remove event listener when component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []); 
 
   const handleClick = () => {
-    mobile ? setClicked(!clicked) : setClicked(false);
+    setClicked(!clicked);
   };
 
   return (
@@ -62,17 +40,13 @@ const Navbar = () => {
       <Link className="logo" href="/" onClick={() => setClicked(false)}>
         <Image src={logo} alt="logo" />
       </Link>
-      {mobile ? (
-        <i className="menu-icon" onClick={handleClick}>
-          {clicked ? XMARK : MENU}
-        </i>
-      ) : null}
+
+      <i className="menu-icon" onClick={handleClick}>
+        {clicked ? XMARK : MENU}
+      </i>
+
       <ul
-        className={
-          mobile
-            ? `${clicked ? "nav-links-mob active" : "nav-links-mob"}`
-            : "nav-links"
-        }
+        className={`${clicked ? "nav-links-mob active" : "nav-links-mob"}`}
         onClick={() => setClicked(false)}
       >
         <Link
@@ -96,9 +70,7 @@ const Navbar = () => {
         >
           {ABOUT} About
         </Link>
-        {mobile && clicked ? (
-          <h4 className="developer-text">Developed By JakChi</h4>
-        ) : null}
+        <h4 className="developer-text">Developed and Designed By JakChi</h4>
       </ul>
     </div>
   );

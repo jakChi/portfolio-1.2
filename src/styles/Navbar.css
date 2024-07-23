@@ -33,6 +33,7 @@ body {
   font-size: 35px;
   color: var(--text-main-col);
   z-index: 3;
+  cursor: pointer;
 }
 
 .menu-icon:active {
@@ -118,44 +119,10 @@ body {
 }
 
 .developer-text {
-  margin-top: 50%;
+  margin-top: 10rem;
   color: var(--magenta);
   opacity: 80%;
-  text-shadow: 1px 1px 0px var(--text-main-col);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
 }
 
-@media screen and (min-width: 425px) {
-  .nav-links {
-    
-    font-size: 15px;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .nav-links > * {
-    margin: auto 5px;
-
-    text-align: center;
-    text-decoration: none;
-    text-wrap: nowrap;
-    color: var(--text-main-col);
-
-    font-family: var(--nav-font);
-    transition: all 300ms ease;
-  }
-
-  .link {
-    padding: 5px;
-  }
-
-  .nav-links > .link.active {
-    border-bottom: 1px solid var(--magenta);
-    color: var(--magenta);
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .nav-links {
-    font-size: 20px;
-  }
-}
