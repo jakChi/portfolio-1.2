@@ -82,24 +82,24 @@ const Contact = () => {
         </section>
         <section className="text">
           <p className="first-paragraph">
-            Technology always made me curious, I was born in the 2000's when the
-            world wasn't like it's today. Phone was very rare things which was
-            the things that only adults cuold have even though i didn't know
+            Technology always made me curious, I was born in the 2000s when the
+            world wasnt like it is today. Phone was very rare things which was
+            the things that only adults cuold have even though i did not know
             anything i could always find some games in them if i had chance of
             having this magical divice in my hands.
           </p>
           <p>
             The first Computer that my family bought was laptop of HP, it was a
-            treaure you should be very careful with and at first i didn't even
+            treaure you should be very careful with and at first i did not even
             know how to turn it off. Then time passed and I learned some tricks
             of this monster, but I only was playing video games at that time.
           </p>
           <p>
-            Let's fast forward by 10 years. In 2022 I knew English well enough
+            Lets fast forward by 10 years. In 2022 I knew English well enough
             that I decided to learn Programming on Khan Academy, this was my
             first steps into computer scinece and I really liked process of
             coding, even thought I was just drawing some figures on the canvas
-            in the khanAcademy's IDE and had no idea what programming was.
+            in the khanAcademys IDE and had no idea what programming was.
           </p>
           <blockquote>
             <hr />
@@ -116,14 +116,14 @@ const Contact = () => {
             and its powers.
           </p>
           <p>
-            After that I'm working on my project and portfolio alongside
+            After that I am working on my project and portfolio alongside
             studying computational biology at my University. currently I am
             working with nextJs and Tailwind CSS, as well as Firebase and my Aim
             is to learn some backend programming too.
           </p>
           <p>
             This was A very short and humble story of my adventrue in Front-end
-            web development world. Hope I didn't bore you and you will be
+            web development world. Hope I did not bore you and you will be
             interested in working with me. Thanks for your time and attention.
             Good luck!
           </p>
