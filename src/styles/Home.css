@@ -57,9 +57,11 @@
 @keyframes slideBottom {
   from {
     transform: translateY(-100%) skewY(0deg);
+   
   }
   to {
     transform: translateY(0) skewY(50deg);
+    
   }
 }
 
@@ -79,9 +81,10 @@
 }
 
 .hero-text h1 {
-  font-size: 61px;
+  margin-top: 7rem;
+  font-size: 58px;
   font-family:Georgia, 'Times New Roman', Times, serif ;
-  background: var(--gradient);
+  background: var(--gradient-reverse2);
   background-clip: text;
   color: transparent;
 }
@@ -238,7 +241,8 @@
   }
 
   .hero-text h1 {
-    font-size: 85px;
+    font-size: 70px;
+    line-height: 6rem;
     background: var(--gradient);
     background-size: 200% 200%;
     background-position: 0 100%;
@@ -253,12 +257,15 @@
   @keyframes textGradient {
     0% {
       background-position: 100% 0;
+      opacity: 0;
     }
     50% {
       background-position: 0 100%;
+      
     }
     100% {
       background-position: 100% 0;
+      opacity: 1;
     }
   }
 
@@ -278,6 +285,10 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .hero-text h1 {
+    font-size: 85px;
+  }
+  
   .projects-rev {
     width: 70%;
   }
