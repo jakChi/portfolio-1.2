@@ -87,7 +87,7 @@ const Footer = () => {
         </section>
         <section className="info-section">
           <div className="product-div">
-            <h1 className="title">What I offer</h1>
+            <h1 className="title">What I offer you</h1>
             <ul className="product-list">
               <li>
                 Development of your SPA

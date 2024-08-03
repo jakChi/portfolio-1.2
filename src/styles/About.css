@@ -4,30 +4,31 @@
 }
 
 .grid {
-  margin: auto;
   margin: 150px;
   width: 80%;
   display: grid;
-  grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
+  grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(
+      2rem,
+      1fr
+    );
   row-gap: 3rem;
 }
 
 h1 {
-  font-family: 'Anton', sans-serif;
+  font-family: "Anton", sans-serif;
 }
 
-h2, h3, h4, h5, h6 {
-  font-family: 'Raleway', sans-serif;
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
 }
 
 a {
   text-decoration: none;
   color: linen;
-}
-
-img {
-  width: 100%;
-  object-fit: cover;
 }
 
 hr {
@@ -48,7 +49,7 @@ hr {
   letter-spacing: 0.5px;
   column-width: 20rem;
   text-align: justify;
-  color: var(--green)
+  color: white;
 }
 
 .about-hero {
@@ -117,5 +118,35 @@ hr {
   content: ' "';
 }
 
+@media screen and (max-width: 320px) {
+  .contact {
+    margin-top: 5rem;
+  }
 
+  .grid {
+    width: 95%;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+  }
 
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  .author {
+    font-size: 1rem;
+  }
+  .social-icons {
+    font-size: 1.5rem;
+  }
+  .first-paragraph::first-letter {
+    font-size: 3rem;
+    
+  }
+  .text {
+    font-size: 1rem;
+  }
+  
+}

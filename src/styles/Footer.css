@@ -8,7 +8,7 @@
 .footer {
   height: fit-content;
   margin-top: 5rem;
-  padding: 2rem 0;
+  padding: 3rem 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -17,14 +17,10 @@
   position: relative;
 }
 
-
-
 .sections {
-  display: flex; 
+  display: flex;
   flex-direction: column;
-  
 }
-
 
 .links-section {
   width: 70%;
@@ -42,7 +38,6 @@
   display: flex;
   justify-content: space-around;
   font-size: 20px;
-
 }
 
 .soc-links > * {
@@ -80,7 +75,6 @@
   width: 70%;
   margin: auto;
   margin-bottom: 20px;
-  
 }
 
 .product-list {
@@ -93,11 +87,11 @@
 .product-list > li {
   margin: 10px 0;
   color: var(--text-main-col);
-  
 }
 
 .email-section {
   margin: auto;
+  margin-bottom: 2rem;
   padding: 1rem;
   width: 95%;
   height: 100%;
@@ -184,29 +178,84 @@
 .copyright {
   margin: auto;
   margin-top: 2rem;
-  width: 95%; 
-  border: 2px solid var(-green);
+  width: 80%;
   color: var(--green);
-  font-size: 10px;
+  font-size: 8px;
   text-align: center;
+  padding: 0.5rem 0;
+  position: absolute;
+  bottom: 0px;
+  left: 2rem;
+  border: 1px solid var(--green);
+  border-bottom: none;
+  border-radius: 15px 15px 0 0;
 }
 
 @media screen and (min-width: 768px) {
   .links-section {
-    width: 10%;
+    left: 7rem;
+  }
+
+  .email-section {
+    margin-bottom: 2rem;
+    width: 70%;
+  }
+
+  .email-heading {
+    font-size: 24px;
+  }
+  .copyright {
+    width: 60%;
+    left: 9rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .sections {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .links-section {
+    padding: 0;
+    margin: 0;
+    position: static;
+    width: 5%;
     border-right: 3px solid var(--text-main-col);
+    border-radius: 0;
+  }
+
+  .soc-links {
+    margin: 0;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .info-section {
     width: 35%;
+    margin: 0 3rem;
+    border-right: 3px solid var(--text-main-col);
+    border-radius: 0;
+    text-align: start;
+  }
+
+  .product-div .title {
+    width: 60%;
+    margin: 0;
+    font-size: 30px;
+    padding: 0.5rem 0;
+  }
+
+  .product-list {
+    font-size: 20px;
   }
 
   .email-section {
     width: 50%;
-  }
-
-  .product-div .title {
-    font-size: 30px;
+    margin: auto;
   }
 
   .email-heading {
@@ -221,17 +270,20 @@
     font-size: 15px;
   }
 
-  .product-list {
-    font-size: 17px;
-  }
-
   .gradient-word {
-    font-size: 18px;
+    font-size: 22px;
   }
-}
 
-@media screen and (min-width: 860px) {
+  .footer {
+    padding-bottom: 0;
+  }
+
   .copyright {
-    font-size: 14px;
+    position: static;
+    margin-top: 2rem;
+    width: 60%;
+    font-size: 12px;
+    background-color: var(--green);
+    color: var(--footer-color);
   }
 }
