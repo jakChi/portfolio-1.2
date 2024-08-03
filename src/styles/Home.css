@@ -18,24 +18,77 @@
 }
 
 .hero {
-  width: 90%;
+  position: relative;
+  width: 100%;
   height: 80vh;
-  margin: 60px auto;
+  margin: 0;
+  overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   border-radius: 20px;
-  color: #00d4ff;
-  background: radial-gradient(
-    circle,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(9, 9, 121, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  background-color: var(--footer-col);
 }
 
+.hero::before {
+  position: absolute;
+  top: -3rem;
+  content: "";
+  width: 100%;
+  height: 40vh;
+  background-color: rgb(0, 17, 255);
+  transform: skewY(50deg);
+  animation: slideBottom 3s ease-out 1;
+  opacity: 50%;
+}
+
+.hero::after {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  height: 40vh;
+  background-color: magenta;
+  transform: skewY(50deg);
+  animation: slideTop 3s ease-out 1;
+  opacity: 80%;
+}
+
+@keyframes slideBottom {
+  from {
+    transform: translateY(-100%) skewY(0deg);
+  }
+  to {
+    transform: translateY(0) skewY(50deg);
+  }
+}
+
+@keyframes slideTop {
+  from {
+    transform: translateY(100%) skewY(0deg);
+  }
+  to {
+    transform: translateY(0) skewY(50deg);
+  }
+}
+
+.hero-text {
+  margin-top: 2rem;
+  width: 95%;
+  z-index: 1;
+}
+
+.hero-text h1 {
+  font-size: 61px;
+  font-family:Georgia, 'Times New Roman', Times, serif ;
+  background: var(--gradient);
+  background-clip: text;
+  color: transparent;
+}
 .hero-text h2 {
-  
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(0, 255, 170);
 }
 
 .projects-rev {
@@ -170,52 +223,45 @@
 }
 
 @media screen and (min-width: 768px) {
-  .hero-text > h1 {
-    font-size: 60px;
-  }
-
-  .txt-btn-group {
-    width: 40%;
-    height: 100%;
-    margin-left: 0;
-    align-items: flex-end;
-    justify-content: space-around;
-  }
-
-  .contact-div,
-  .projects-div {
+  .hero {
+    height: 80vh;
     width: 100%;
-    height: 30%;
-    flex-direction: row;
-    justify-content: space-around;
-    border: 1px solid transparent;
-    border-radius: 15px;
-    transition: all 300ms ease-in;
-    transition-delay: 200ms;
   }
 
-  .contact-div:hover,
-  .projects-div:hover {
-    border: 1px solid var(--green);
-    transform: translateY(-5%);
-    box-shadow: 0 15px 10px 1px var(--dark);
+  .hero-text {
+    width: 90%;
+    height: 100%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    
   }
 
-  .contact-text,
-  .projects-text {
-    margin: 0;
-    padding: 5px;
-    text-align: left;
-    font-size: 22px;
-    line-height: 30px;
-    transition: all 300ms ease;
+  .hero-text h1 {
+    font-size: 85px;
+    background: var(--gradient);
+    background-size: 200% 200%;
+    background-position: 0 100%;
+    background-clip: text;
+    animation: textGradient 3s ease-out 1 forwards;
   }
 
-  .pixelated-btn {
-    height: 40px;
-    border: 1px solid var(--text-main-col);
-    position: relative;
+  .hero-text > h2 {
+    font-size: 16px;
   }
+
+  @keyframes textGradient {
+    0% {
+      background-position: 100% 0;
+    }
+    50% {
+      background-position: 0 100%;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+
 
   .grid {
     grid-template-columns: repeat(2, auto);
@@ -229,80 +275,11 @@
     height: 300px;
     min-width: 330px;
   }
-
-  .bmiCalc {
-    grid-area: 2/1/2 / span 2;
-  }
 }
 
 @media screen and (min-width: 1024px) {
-  .hero-text {
-    animation-name: slideIn;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-  }
-
-  .hero-text > h1 {
-    font-size: 60px;
-  }
-
-  .hero-text > h2 {
-    animation-name: slideIn; 
-    animation-duration: 1.5s;
-    font-size: 20px;
-  }
-
-  @keyframes slideIn {
-    from {
-      transform: translateX(100%);
-      
-    }
-    to {
-      transform: translateX(0);
-      
-    }
-  }
-
-
-  .projects-text,
-  .contact-text {
-    width: 60%;
-  }
-
-  .pixelated-btn {
-    border: none;
-    font-size: 22px;
-  }
-
-  .pixelated-btn::before,
-  .pixelated-btn::after {
-    width: 0;
-    height: 0;
-    content: "";
-    position: absolute;
-    z-index: 0;
-    opacity: 0;
-    transition: all 400ms ease;
-  }
-
-  .pixelated-btn:before {
-    border-top: 2px solid var(--text-main-col);
-    border-left: 2px solid var(--text-main-col);
-    top: -2px;
-    left: -2px;
-  }
-  .pixelated-btn::after {
-    border-bottom: 2px solid var(--text-main-col);
-    border-right: 2px solid var(--text-main-col);
-    bottom: -2px;
-    right: -2px;
-  }
-
-  .pixelated-btn:hover::before,
-  .pixelated-btn:hover::after {
-    width: calc(100% + 2px);
-    height: 100%;
-    opacity: 100%;
+  .projects-rev {
+    width: 70%;
   }
 
   .screenshot {
@@ -321,20 +298,7 @@
   }
 
   .grid {
-    margin: 50px;
-    grid-template-areas: "calc bmiCalc tictactoe";
+    margin: 20px;
     gap: 30px;
-  }
-
-  .calc {
-    grid-area: calc;
-  }
-
-  .bmiCalc {
-    grid-area: bmiCalc;
-  }
-
-  .tictactoe {
-    grid-area: tictactoe;
   }
 }

@@ -12,7 +12,7 @@
   --gradient: linear-gradient(
     220deg,
     rgb(255, 0, 170) 20%,
-    rgb(0, 17, 255) 100%
+    rgb(0, 17, 255) 40%
   );
   --gradient-reverse: linear-gradient(
     140deg,

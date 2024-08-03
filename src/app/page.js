@@ -8,9 +8,10 @@ export default function Home() {
     <main className="home">
       <section className="hero">
         <div className="hero-text">
-          <h1>Hi! I am Jakob a front-end dev</h1>
+          <h1>Hi! I am Jakob, Master of &lt;divs/&gt;</h1>
           <h2>
-            this is no longer current version, you can see new one <Link href={""}>here</Link>
+            this is no longer current version, you can see new one{" "}
+            <Link href={""}>here</Link>
           </h2>
         </div>
       </section>

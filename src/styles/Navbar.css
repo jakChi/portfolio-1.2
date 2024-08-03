@@ -25,7 +25,7 @@ body {
 .logo > img {
   width: 100px;
   height: 80px;
-  margin: 0 40px;
+  margin: 0 20px;
 }
 
 .menu-icon {
@@ -123,6 +123,6 @@ body {
   color: var(--magenta);
   opacity: 80%;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 20px;
+  font-size: 13px;
 }
 

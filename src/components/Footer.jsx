@@ -125,6 +125,7 @@ const Footer = () => {
               className="email-input"
               type="email"
               placeholder="Input your email here"
+              autoComplete="email"
               value={input}
               onChange={handleChange}
             />
